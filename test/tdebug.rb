@@ -114,7 +114,7 @@ EOB
     options.nx = true
   end
   opts.on("-I", "--include PATH", String, "Add PATH to $LOAD_PATH") do |path|
-    $LOAD_PATH.unshift(path)
+    $LOAD_PATH.unshift(*path.split(':'))
   end
   opts.on("-r", "--require SCRIPT", String,
           "Require the library, before executing your script") do |name|

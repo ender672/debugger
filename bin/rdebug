@@ -200,7 +200,7 @@ EOB
       options.host = host
     end
     opts.on('-I', '--include PATH', String, 'Add PATH to $LOAD_PATH') do |path|
-      $LOAD_PATH.unshift(path)
+      $LOAD_PATH.unshift(*path.split(':'))
     end
     opts.on('--no-control', 'Do not automatically start control thread') do
       options.control = false
